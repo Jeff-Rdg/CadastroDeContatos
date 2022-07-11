@@ -25,5 +25,10 @@ namespace FirstSiteMVC.Controllers
         {
             return View();
         }
+        public IActionResult Apagar()
+        {
+            return View();
+        }
+
     }
 }
