@@ -14,10 +14,7 @@ namespace FirstSiteMVC.Controllers
 
         public IActionResult Index()
         {
-            HomeModel home = new HomeModel();
-            home.Nome = "Jefferson Rodrigues";
-            home.Email = "jsilvardg@outlook.com";
-            return View(home);
+            return View();
         }
 
         public IActionResult Privacy()
