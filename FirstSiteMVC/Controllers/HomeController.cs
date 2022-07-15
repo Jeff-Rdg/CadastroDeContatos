@@ -1,4 +1,5 @@
-﻿using FirstSiteMVC.Models;
+﻿using FirstSiteMVC.Filters;
+using FirstSiteMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace FirstSiteMVC.Controllers
 {
+    [PaginaParaUsuarioLogado]
     public class HomeController : Controller
     {
 

@@ -1,4 +1,5 @@
-﻿using FirstSiteMVC.Models;
+﻿using FirstSiteMVC.Filters;
+using FirstSiteMVC.Models;
 using FirstSiteMVC.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace FirstSiteMVC.Controllers
 {
+    [PaginaParaUsuarioLogado]
     public class ContatoController : Controller
     {
         private readonly IContatoRepositorio _contatoRepositorio;

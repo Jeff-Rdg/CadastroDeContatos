@@ -1,4 +1,5 @@
 ﻿using FirstSiteMVC.Enums;
+using FirstSiteMVC.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -26,5 +27,27 @@ namespace FirstSiteMVC.Models
         public DateTime DataCadastro { get; set; }
         public DateTime? DataAtualizacao { get; set; } // ? => informa que campo pode ser nulo
 
+        public bool SenhaValida(string senha)
+        {
+            return Senha == senha.GerarHash();
+        }
+
+        public void SetSenhaHash()
+        {
+            Senha = Senha.GerarHash();
+        }
+
+        public string GerarNovaSenha()
+        {
+            string novaSenha = Guid.NewGuid().ToString().Substring(0, 8);
+            Senha = novaSenha.GerarHash();
+
+            return novaSenha;
+        }
+
+        public void SetNovaSenha(string novaSenha)
+        {
+            Senha = novaSenha.GerarHash();
+        }
     }
 }
